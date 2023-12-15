@@ -1,0 +1,2 @@
+# internationalisierung
+ Aufgabe 3: Internationalisierung Internationalisieren Sie die Software, so dass diese zur Laufzeit auf Englisch, auf Französisch oder auf Deutsch umgeschaltet werden kann. Startsprache ist die des Betriebssystems bzw. die letzte eingestellte Sprache. Suchen Sie sich eines der Programme aus: 1. Konsolenprogramm „Projektleiter“ 2. Swing-Programm Studierendenauszeichnung 3. Thermometer-Programm Achten Sie auf eine gute Softwarearchitektur. Erstellen Sie mit Maven eine runnable-jar Datei.
