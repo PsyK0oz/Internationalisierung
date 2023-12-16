@@ -1,3 +1,4 @@
+import java.text.DateFormat;
 import java.text.MessageFormat;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
@@ -19,16 +20,22 @@ class ConsoleThermometer {
         Locale currentLocale = Locale.getDefault();
         messages = ResourceBundle.getBundle("MessagesBundle", currentLocale);
 
-        System.out.println(messages.getString("thermometerOn"));
-        this.reset();
-        System.out.print(messages.getString("proverb") + new SimpleDateFormat("dd.MM.yyyy").format(new Date()) + ": ");
+        DateFormat df = DateFormat.getDateInstance(DateFormat.MEDIUM, currentLocale);
+        String formattedDate = df.format(new Date());
+
         String[] sprichwoerter = messages.getString("proverbs").split(",");
         int i = ((int) (Math.random() * 10)) % sprichwoerter.length;
-        System.out.println(sprichwoerter[i]);
+        String proverb = sprichwoerter[i];
+
+        MessageFormat mf = new MessageFormat(messages.getString("proverb"), currentLocale);
+
+        System.out.println(messages.getString("thermometerOn"));
+        this.reset();
+        System.out.println(mf.format(new Object[] { formattedDate, proverb }));
+
         double fee = Math.random() * 10000;
         // Print the license fee
-        NumberFormat nf;
-        nf = NumberFormat.getCurrencyInstance(currentLocale);
+        NumberFormat nf = NumberFormat.getCurrencyInstance(currentLocale);
         System.out.println(messages.getString("license") + nf.format(fee));
     }
 
