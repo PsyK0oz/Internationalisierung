@@ -15,7 +15,7 @@ public class ConsoleThermometerI18N {
         // Set the default locale based on the user's input
         switch (language) {
             case "en":
-                Locale.setDefault(Locale.forLanguageTag("en-US"));
+                Locale.setDefault(Locale.forLanguageTag("en-GB"));
                 break;
             case "fr":
                 Locale.setDefault(Locale.forLanguageTag("fr-FR"));

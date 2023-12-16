@@ -28,11 +28,7 @@ class ConsoleThermometer {
         double fee = Math.random() * 10000;
         // Print the license fee
         NumberFormat nf;
-        if (currentLocale.getLanguage().equals("en")) {
-            nf = NumberFormat.getCurrencyInstance(Locale.UK);
-        } else {
-            nf = NumberFormat.getCurrencyInstance(currentLocale);
-        }
+        nf = NumberFormat.getCurrencyInstance(currentLocale);
         System.out.println(messages.getString("license") + nf.format(fee));
     }
 
