@@ -1,3 +1,5 @@
+package com.exemple;
+
 import java.text.DateFormat;
 import java.text.MessageFormat;
 import java.text.NumberFormat;
